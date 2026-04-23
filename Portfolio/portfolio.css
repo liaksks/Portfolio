@@ -73,8 +73,12 @@ nav a {
 }
 
 .hero img {
-  width: 300px;
+  width: 800px;
   border-radius: 10px;
+}
+
+.hero-text h1 {
+  align-items: center;
 }
 
 .hero-text h2 {
@@ -172,13 +176,154 @@ footer {
 }
 
 /* NEXT BUTTON */
+
 .next-btn {
-  position: absolute;
-  right: 40px;
-  font-size: 30px;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.next-btn:hover {
+  background: white;
+  color: #1c2740;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* CLICK (PRESS) EFFECT */
+.next-btn:active {
+  transform: scale(0.95);
+}
+
+/* OPTIONAL: CONTINUOUS PULSE */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.next-btn {
+  animation: pulse 2s infinite;
+}
+.project-section {
+  background: #1c2740;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 60px;
+}
+
+.project-img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.project-text {
+  max-width: 500px;
+}
+
+.project-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #c86b6b;
   color: white;
   cursor: pointer;
-  border: 2px solid white;
-  border-radius: 50%;
-  padding: 10px 15px;
+}
+.contact-section {
+  background: #1c2740;
+  display: flex;
+  justify-content: space-around;
+  padding: 60px;
+  color: white;
+}
+
+/* FORM */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-box input,
+.form-box textarea {
+  width: 300px;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+}
+
+.form-box textarea {
+  height: 120px;
+}
+
+.form-box button {
+  width: 80px;
+  padding: 8px;
+  border-radius: 15px;
+  border: none;
+  background: #c86b6b;
+  color: white;
+  cursor: pointer;
+}
+
+/* CONTACT INFO */
+.contact-info {
+  max-width: 400px;
+}
+
+/* POPUP MESSAGE */
+.popup {
+  display: none;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e6d28f;
+  padding: 30px 50px;
+  border-radius: 20px;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  width: 350px;
+
+  /* Animation */
+  animation: fadeIn 0.4s ease;
+}
+
+/* CLOSE BUTTON (top-left like your design) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
