@@ -2,18 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project</title>
     <link rel="stylesheet" href="portfolio.css" />
   </head>
   <body>
     <header>
-      <div class="top-bar">
-        <h1>LIAVERSE</h1>
-        <h1>WELCOME TO MY PAGE</h1>
-      </div>
+      <div class="logo">LIAVERSE</div>
+      <h1 class="title">WELCOME TO MY PAGE</h1>
+
       <nav>
-        <a href="index.html">Home</a>
+        <a href="portfolio.html">Home</a>
         <a href="about.html">About</a>
         <a href="project.html">Project</a>
         <a href="contact.html">Contact</a>
@@ -21,22 +19,24 @@
     </header>
 
     <section class="project-section">
-      <img src="images/project.png" class="project-img" />
+      <div class="project-container">
+        <div class="image-box">
+          <img src="images/login.png" alt="Payroll System" />
+        </div>
 
-      <div class="project-text">
-        <p>
-          This project is called Payroll System. It is a simple payroll system
-          designed for small companies who wants to adapt with digital payroll
-          system. I made this system way back when I was in grade 12 and
-          presented it to the panelists.
-        </p>
+        <div class="text-box">
+          <p>
+            This project is called Payroll System. It is a simple payroll system
+            designed for small companies who wants to adapt with digital payroll
+            system. I made this system way back when I was in grade 12 and
+            presented it to the panelists.
+          </p>
 
-        <button class="project-btn">About this Project</button>
+          <a href="about_proj.html" class="view-btn">About This Project</a>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <h2>LIAVERSE</h2>
-    </footer>
+    <footer>LIAVERSE</footer>
   </body>
 </html>

@@ -29,38 +29,85 @@ body {
   font-family: "Georgia", serif;
 }
 
-/* HEADER */
+/* ==========================================
+   HEADER - FIXED TO MATCH HOME PAGE EXACTLY
+   ========================================== */
 header {
-  background: #a0aecd;
+  background-color: #a0aecd; /* Light blue background */
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
 }
 
+/* Container for Logo and Title */
 .top-bar {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-}
-
-.logo {
-  font-size: 28px;
-}
-
-.title {
-  font-size: 28px;
   align-items: center;
+  width: 100%;
+  padding: 0 30px;
+  margin-bottom: 15px;
 }
 
+/* LIAVERSE Logo - LEFT SIDE */
+.top-bar h1:first-child {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+}
+
+/* WELCOME TEXT - CENTER */
+.top-bar h1:last-child {
+  font-size: 26px;
+  font-weight: normal;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Navigation Links */
 nav {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  padding-bottom: 10px;
+  margin-top: 10px;
 }
 
 nav a {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
   font-size: 18px;
+  margin: 0 25px;
+  position: relative;
+  transition: 0.3s ease;
 }
+
+/* HOVER EFFECT */
+nav a:hover {
+  color: #c86b6b;
+  transform: scale(1.1);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #c86b6b;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  text-shadow: 0 0 10px rgba(200, 107, 107, 0.7);
+}
+/* ==========================================
+   END OF HEADER FIX
+   ========================================== */
 
 /* HERO */
 .hero {
@@ -70,6 +117,7 @@ nav a {
   align-items: center;
   padding: 60px;
   gap: 50px;
+  min-height: 90vh;
 }
 
 .hero img {
@@ -94,8 +142,12 @@ nav a {
 .about {
   background: #1c2740;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   padding: 60px 20px;
+  gap: 120px;
+  min-height: 90vh;
+  align-items: flex-start;
+  color: black;
 }
 
 .card {
@@ -103,11 +155,14 @@ nav a {
   width: 300px;
   padding: 30px;
   border-radius: 40px;
+  height: auto;
+  min-height: unset;
 }
 
 .card h3 {
   text-align: center;
   margin-bottom: 20px;
+  color: black;
 }
 
 .card button {
@@ -118,6 +173,24 @@ nav a {
   color: white;
   border-radius: 20px;
   cursor: pointer;
+}
+.view-btn {
+  background-color: #b85c5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.view-btn:hover {
+  background-color: #9a4a4a;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* FOOTER */
@@ -152,6 +225,16 @@ footer {
   border-radius: 20px;
   font-size: 14px;
 }
+.prev-btn {
+  position: absolute;
+  left: 20px;
+  text-decoration: none;
+  background: #1c2740;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
 
 /* MAIN SECTION */
 .cert-container {
@@ -171,39 +254,157 @@ footer {
 }
 
 .cert-box img {
-  width: 700px;
+  width: 850px;
   max-width: 100%;
 }
 
-/* NEXT BUTTON */
+/* BUTTON CONTAINER */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
 
-.next-btn {
-  margin-top: 20px;
-  padding: 12px 20px;
-  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* BODY */
+body {
+  margin: 0;
+  background: #1c2740;
+  font-family: Georgia, serif;
+  color: white;
+}
+
+/* HEADER */
+.cert-header {
+  background: #a0aecd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  padding: 20px;
+}
+
+.cert-header h1 {
+  color: black;
+  font-size: 40px;
+  margin: 0;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: absolute;
+  left: 20px;
+
+  text-decoration: none;
+
+  background: #c86b6b;
+  color: white;
+
+  padding: 8px 16px;
+  border-radius: 20px;
+
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: white;
+  color: #1c2740;
+}
+
+/* MAIN SECTION */
+.cert-container {
+  min-height: 80vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+/* CERTIFICATE BOX */
+.cert-box img {
+  width: 750px;
+  max-width: 90%;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  border-radius: 0;
+}
+
+/* BUTTONS */
+.next-btn,
+.prev-btn {
+  position: absolute;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
   border: 2px solid white;
+
   background: transparent;
   color: white;
-  border-radius: 25px;
+
+  font-size: 28px;
   cursor: pointer;
 
   transition: all 0.3s ease;
 }
 
-/* HOVER EFFECT */
-.next-btn:hover {
+/* PREV POSITION */
+.prev-btn {
+  left: 120px;
+}
+
+/* NEXT POSITION */
+.next-btn {
+  right: 120px;
+}
+
+/* HOVER */
+.next-btn:hover,
+.prev-btn:hover {
   background: white;
   color: #1c2740;
+
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
-/* CLICK (PRESS) EFFECT */
-.next-btn:active {
-  transform: scale(0.95);
+/* CLICK */
+.next-btn:active,
+.prev-btn:active {
+  transform: scale(0.9);
 }
 
-/* OPTIONAL: CONTINUOUS PULSE */
+/* FOOTER */
+footer {
+  background: #a0aecd;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+footer h2 {
+  color: black;
+  margin: 0;
+  font-size: 40px;
+}
+
+/* PULSE ANIMATION */
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
@@ -219,39 +420,117 @@ footer {
 .next-btn {
   animation: pulse 2s infinite;
 }
-.project-section {
-  background: #1c2740;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  padding: 60px;
-}
 
-.project-img {
-  width: 400px;
-  border-radius: 10px;
-}
-
-.project-text {
-  max-width: 500px;
-}
-
+/*Project */
 .project-btn {
   margin-top: 20px;
   padding: 10px 20px;
   border-radius: 20px;
   border: none;
-  background: #c86b6b;
+  background: #bd5a5a;
   color: white;
   cursor: pointer;
 }
+.project-btn:hover {
+  background-color: #a94444;
+}
+
+/* BODY */
+body {
+  font-family: Georgia, serif;
+  background-color: #1f2a44;
+  color: white;
+}
+
+/* HEADER */
+header {
+  background-color: #8f9bb3;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 24px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+}
+
+nav .active {
+  text-decoration: underline;
+}
+
+/* PROJECT SECTION */
+.project-section {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FLEX CONTAINER */
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 80%;
+}
+
+/* IMAGE */
+.image-box img {
+  width: 800px;
+  border-radius: 10px;
+}
+
+/* TEXT */
+.text-box {
+  max-width: 400px;
+}
+
+.text-box p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #c45b5b;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background-color: #8f9bb3;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  color: black;
+}
+/* contact */
 .contact-section {
   background: #1c2740;
   display: flex;
   justify-content: space-around;
   padding: 60px;
   color: white;
+  min-height: 90vh;
 }
 
 /* FORM */
@@ -263,10 +542,11 @@ footer {
 
 .form-box input,
 .form-box textarea {
-  width: 300px;
+  width: 700px;
   padding: 15px;
   border-radius: 20px;
   border: none;
+  font-size: large;
 }
 
 .form-box textarea {
@@ -284,10 +564,53 @@ footer {
 }
 
 /* CONTACT INFO */
-.contact-info {
-  max-width: 400px;
+.form-box input,
+.form-box textarea {
+  width: 360px;
+  padding: 12px 18px;
+  background-color: #94a3b8;
+  border: none;
+  border-radius: 25px;
+  color: black;
+  font-size: 16px;
+}
+/* --- STYLE FOR PLACEHOLDER TEXT --- */
+.form-box input::placeholder,
+.form-box textarea::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+.form-box textarea {
+  height: 130px;
+  resize: none;
+  border-radius: 20px;
 }
 
+.form-box button {
+  width: 85px;
+  padding: 8px 0;
+  background-color: #c05858;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  align-self: center;
+  font-size: 15px;
+}
+
+/* Contact info box */
+.info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 18px;
+}
+
+.info-box p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 /* POPUP MESSAGE */
 .popup {
   display: none;
@@ -307,7 +630,7 @@ footer {
   animation: fadeIn 0.4s ease;
 }
 
-/* CLOSE BUTTON (top-left like your design) */
+/* CLOSE BUTTON */
 .close-btn {
   position: absolute;
   top: 10px;
