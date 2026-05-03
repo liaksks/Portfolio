@@ -29,9 +29,6 @@ body {
   font-family: "Georgia", serif;
 }
 
-/* ==========================================
-   HEADER - FIXED TO MATCH HOME PAGE EXACTLY
-   ========================================== */
 header {
   background-color: #a0aecd; /* Light blue background */
   color: black;
@@ -105,9 +102,6 @@ nav a:hover::after {
 nav a:hover {
   text-shadow: 0 0 10px rgba(200, 107, 107, 0.7);
 }
-/* ==========================================
-   END OF HEADER FIX
-   ========================================== */
 
 /* HERO */
 .hero {
