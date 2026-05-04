@@ -27,6 +27,7 @@ footer {
 }
 body {
   font-family: "Georgia", serif;
+  font-size: large;
 }
 
 header {
@@ -112,10 +113,11 @@ nav a:hover {
   padding: 60px;
   gap: 50px;
   min-height: 90vh;
+  text-align: justify;
 }
 
 .hero img {
-  width: 800px;
+  width: 900px;
   border-radius: 10px;
 }
 
@@ -124,7 +126,7 @@ nav a:hover {
 }
 
 .hero-text h2 {
-  font-size: 32px;
+  font-size: 38px;
   margin-bottom: 10px;
 }
 
